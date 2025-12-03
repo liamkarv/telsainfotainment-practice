@@ -1,4 +1,6 @@
 import QtQuick
+import "ui/BottomBar"
+import "ui/RightScreen"
 
 Window
 {
@@ -6,4 +8,14 @@ Window
     height: 720
     visible: true
     title: qsTr("TeslaInfotainment")
+
+    RightScreen
+    {
+        id: rightScreen
+    }
+
+    BottomBar
+    {
+        id: bottomBar
+    }
 }
