@@ -1,4 +1,6 @@
 import QtQuick 2.15
+import QtPositioning
+import QtLocation
 
 Rectangle
 {
@@ -9,6 +11,20 @@ Rectangle
         bottom: bottomBar.top
         right: parent.right
     }
-    color: "orange"
+
+    Plugin
+    {
+        id: mapPlugin
+        name: "osm"
+    }
+
+    Map
+    {
+        anchors.fill: parent
+        plugin: mapPlugin
+        center: QtPositioning.coordinate(37.8, 144.96)
+        zoomLevel: 14
+    }
+
     width: parent.width * 2/3
 }
